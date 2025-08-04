@@ -1,4 +1,4 @@
-# Log-in Python
+# Log-in System in Python
 # Mariano, Kenth Jarren S.
 
 from dataclasses import dataclass
