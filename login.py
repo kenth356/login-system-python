@@ -13,6 +13,29 @@ class userDC:
     name: str
     passw: str
 
+def main():
+    while True:
+        print("\n\n" + "================================".rjust(75))
+        print("[   WELCOME   ]".rjust(66))
+        print("================================".rjust(75))
+        print("\n" + "1. Registration           2. Log in          3. Exit".rjust(86))
+        print("----------------------------------------------------------".rjust(89))
+        try:
+            choice = int(input("\n\n" + "Enter: ".rjust(39)))
+        except ValueError:
+            choice = -1
+        if choice == 1:
+            REGIS()
+        elif choice == 2:
+            LOGIN()
+        elif choice == 3:
+            EXIT()
+            return
+        else:
+            print("\n" + "--------------------------------------------------------".rjust(88))
+            print("\n" + "[  PLEASE ENTER A CORRECT INPUT  ]".rjust(76))
+            print("\n" + "--------------------------------------------------------".rjust(88))
+
 def REGIS():
     global usersD
     print("\n\n" + "===============================".rjust(75))
@@ -94,29 +117,6 @@ def SAVEDFILES():
     with open("users.txt", "w") as file:
         for users in usersD:
             file.write(f"NAME: {users.name}\nPASSWORD: {users.passw}\n")
-
-def main():
-    while True:
-        print("\n\n" + "================================".rjust(75))
-        print("[   WELCOME   ]".rjust(66))
-        print("================================".rjust(75))
-        print("\n" + "1. Registration           2. Log in          3. Exit".rjust(86))
-        print("----------------------------------------------------------".rjust(89))
-        try:
-            choice = int(input("\n\n" + "Enter: ".rjust(39)))
-        except ValueError:
-            choice = -1
-        if choice == 1:
-            REGIS()
-        elif choice == 2:
-            LOGIN()
-        elif choice == 3:
-            EXIT()
-            return
-        else:
-            print("\n" + "--------------------------------------------------------".rjust(88))
-            print("\n" + "[  PLEASE ENTER A CORRECT INPUT  ]".rjust(76))
-            print("\n" + "--------------------------------------------------------".rjust(88))
 
 if __name__ == "__main__":
     main()
